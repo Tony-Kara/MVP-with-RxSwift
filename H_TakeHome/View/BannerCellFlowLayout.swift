@@ -12,15 +12,26 @@ final class BannerCellFlowLayout: UICollectionViewFlowLayout {
     override func prepare() {
         super.prepare()
         guard let collectionView = collectionView else { return }
-        scrollDirection = .vertical
-        collectionView.showsVerticalScrollIndicator = false
-        minimumInteritemSpacing = 0
-        minimumLineSpacing = 16
+        scrollDirection = .horizontal
+        collectionView.showsHorizontalScrollIndicator = false
+        minimumInteritemSpacing = 16
+        minimumLineSpacing = 0
         
+        sectionInset = .init(top: 0,
+                             left: 0,
+                             bottom: 0,
+                             right: 0)
         
+        let screenSize = UIScreen.main.bounds.width
+        let widthSize = screenSize / 1.3
+        
+        let screenWidth = UIScreen.main.bounds.width
+        
+        if screenWidth <= 321 {
+          itemSize = .init(width: widthSize, height: 96)
+        } else {
+          itemSize = .init(width: widthSize, height: 112)
+        }
         
     }
-    
-    
-    
 }

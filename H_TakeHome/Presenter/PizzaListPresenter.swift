@@ -9,10 +9,13 @@ import Foundation
 protocol PizzaListViewPresenter: AnyObject {
     init(view: PizzaListView)
     func viewDidLoad()
+    func loadBannerImage(with url: URL)
 }
 
 
 final class PizzaListPresenter: PizzaListViewPresenter {
+   
+    
     
     //MARK: - Private properties
     
@@ -27,11 +30,17 @@ final class PizzaListPresenter: PizzaListViewPresenter {
         
     }
     
-    //MARK: - Life Cycle
+    // MARK: - Protocol methods
     
     func viewDidLoad() {
         apiService.getMenu { [weak self] menuItems in
             self?.view?.getMenuItems(menuItems)
+        }
+    }
+    
+    func loadBannerImage(with url: URL) {
+        apiService.getImage(url: url) { bannerImage in
+            self.view?.getBannerImage(bannerImage)
         }
     }
     

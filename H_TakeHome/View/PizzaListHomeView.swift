@@ -15,15 +15,17 @@ final class PizzaListHomeView: UIView {
     private lazy var backgroundView: UIView = {
        let view = UIView()
         view.layer.cornerRadius = 20
+        view.backgroundColor = .white
         return view
     }()
  
     // MARK: - Public properties
     
     lazy var bannerViewCollectionView: UICollectionView = {
-        let layout = AdvertisementBannerCollectionLayout()
+        let layout = BannerCellFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.clipsToBounds = true
+        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
     
@@ -46,15 +48,43 @@ final class PizzaListHomeView: UIView {
         return tableView
         }()
     
-    
     //MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
+        setupInitialLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Private functions
+
+    func setupInitialLayout() {
+        addSubview(backgroundView)
+        [bannerViewCollectionView, menuCatergoryCollectionView].forEach { backgroundView.addSubview($0) }
+
+        backgroundView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(5)
+        }
+
+        bannerViewCollectionView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(5)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(112)
+            make.width.equalTo(300)
+        }
+
+        menuCatergoryCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(bannerViewCollectionView.snp.bottom).offset(24)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(12)
+            
+        }
+    }
+
 }
+

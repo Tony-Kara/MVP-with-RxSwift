@@ -40,8 +40,18 @@ final class AdvertisementBannerCollectionCell: UICollectionViewCell {
     private func configureView() {
         contentView.layer.cornerRadius = 16
         imageView.layer.cornerRadius = 16
+        backgroundColor = .clear
         contentView.backgroundColor = .clear
     }
     
+    // MARK: - Public functions
+    
+    func set(image: UIImage) {
+        print("1111-2", image)
+        DispatchQueue.main.async {
+            self.imageView.image = image
+        }
+        
+    }
     
 }

@@ -8,6 +8,6 @@
 import Foundation
 
 struct MenuItem: Decodable {
-    let image: URL
+    let image: URL?
     let name, description, price, category : String
 }

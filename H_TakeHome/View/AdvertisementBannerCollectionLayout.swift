@@ -17,18 +17,18 @@ final class AdvertisementBannerCollectionLayout: UICollectionViewFlowLayout {
     scrollDirection = .horizontal
 
     sectionInset = .init(
-      top: 8,
-      left: 12,
-      bottom: 8,
-      right: 12
+      top: 0,
+      left: 0,
+      bottom: 0,
+      right: 0
     )
 
     let width = collection.frame.width - 32
     let itemHeight = collection.frame.height
     itemSize = .init(width: width, height: itemHeight)
 
-    minimumLineSpacing = 8
-    minimumInteritemSpacing = 8
+    minimumLineSpacing = 0
+    minimumInteritemSpacing = 0
   }
 
   override func targetContentOffset(
