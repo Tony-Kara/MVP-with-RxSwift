@@ -14,16 +14,16 @@ final class MenuCatCellFlowLayout: UICollectionViewFlowLayout {
         guard let collectionView = collectionView else { return }
         scrollDirection = .horizontal
         collectionView.showsHorizontalScrollIndicator = false
-        minimumInteritemSpacing = 16
-        minimumLineSpacing = 0
+        minimumInteritemSpacing = 0
+        minimumLineSpacing = 8
         
         sectionInset = .init(top: 0,
-                             left: 0,
+                             left: 16,
                              bottom: 0,
-                             right: 0)
+                             right: 16)
         
-        let screenSize = UIScreen.main.bounds.width
-        let widthSize = screenSize / 3.2
+        let screenSize = UIScreen.main.bounds.width 
+        let widthSize = screenSize / 3.4
         
         let screenWidth = UIScreen.main.bounds.width
         

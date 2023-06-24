@@ -49,6 +49,7 @@ final class MenuCatergoryCell: UICollectionViewCell {
         categoryLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
         }
+        
     }
     
     //MARK: - Public function

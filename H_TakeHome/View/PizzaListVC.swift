@@ -74,8 +74,8 @@ final class PizzaListVC: UIViewController {
         
         
         self.presenter.menuCategory
-            .bind(to: self.rootView.menuCatergoryCollectionView.rx.items(MenuCatergoryCell.self)) { _, model, cell in
-                cell.set(category: model)
+            .bind(to: self.rootView.menuCatergoryCollectionView.rx.items(MenuCatergoryCell.self)) { _, categoryMenu, cell in
+                cell.set(category: categoryMenu)
             }.disposed(by: disposeBag)
     }
     

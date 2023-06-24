@@ -14,7 +14,7 @@ final class BannerCellFlowLayout: UICollectionViewFlowLayout {
         guard let collectionView = collectionView else { return }
         scrollDirection = .horizontal
         collectionView.showsHorizontalScrollIndicator = false
-        minimumInteritemSpacing = 16
+        minimumInteritemSpacing = 0
         minimumLineSpacing = 0
         
         sectionInset = .init(top: 0,
@@ -22,7 +22,7 @@ final class BannerCellFlowLayout: UICollectionViewFlowLayout {
                              bottom: 0,
                              right: 0)
         
-        let screenSize = UIScreen.main.bounds.width
+        let screenSize = UIScreen.main.bounds.width - 32
         let widthSize = screenSize / 1.3
         
         let screenWidth = UIScreen.main.bounds.width

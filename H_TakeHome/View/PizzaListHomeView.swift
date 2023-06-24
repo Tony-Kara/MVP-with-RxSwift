@@ -24,17 +24,14 @@ final class PizzaListHomeView: UIView {
     lazy var bannerViewCollectionView: UICollectionView = {
         let layout = BannerCellFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.clipsToBounds = true
-        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
     
     lazy var menuCatergoryCollectionView: UICollectionView = {
         let layout = MenuCatCellFlowLayout()
-        layout.scrollDirection = .horizontal
-        let collectionView = UICollectionView(frame: bounds, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
-        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
     
@@ -73,16 +70,16 @@ final class PizzaListHomeView: UIView {
 
         bannerViewCollectionView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(5)
-            make.leading.trailing.equalToSuperview().inset(16)
+            make.leading.trailing.equalToSuperview()
             make.height.equalTo(112)
             make.width.equalTo(300)
         }
 
         menuCatergoryCollectionView.snp.makeConstraints { make in
             make.top.equalTo(bannerViewCollectionView.snp.bottom).offset(24)
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(88)
-            make.width.equalTo(132)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(32)
+            make.width.equalTo(88)
         }
     }
 
