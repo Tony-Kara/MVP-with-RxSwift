@@ -12,7 +12,7 @@ import RxRelay
 
 protocol PizzaListView: AnyObject {
     func getMenuItems(_ menuItems : [MenuItem])
-    func getBannerImage(_ image: UIImage)
+    func getProductImage(_ image: UIImage)
 }
 
 final class PizzaListVC: UIViewController {
@@ -22,7 +22,7 @@ final class PizzaListVC: UIViewController {
    private let rootView = PizzaListHomeView()
    
    private var menuItemsData = BehaviorRelay<[MenuItem]>(value:[])
-   private var bannerImages =  BehaviorRelay<[UIImage?]>(value: [UIImage(named: "Banner1"), UIImage(named: "Banner2"), UIImage(named: "Banner3")] )
+  
    private let disposeBag = DisposeBag()
     
     //MARK: - Public properties
@@ -51,11 +51,11 @@ final class PizzaListVC: UIViewController {
     
     private func bindPresenter() {
 
-            self.bannerImages
-                .bind(to: self.rootView.bannerViewCollectionView.rx.items(AdvertisementBannerCollectionCell.self)) { _, model, cell in
+        self.presenter.bannerImages
+                .bind(to: self.rootView.bannerViewCollectionView.rx.items(AdvertisementBannerCollectionCell.self)) { _, image, cell in
                     
                     
-                    cell.set(image: model ?? UIImage())
+                    cell.set(image: image ?? UIImage())
                     
 //                    if let imageUrl = model.image {
 //                    self.presenter.loadBannerImage(with: imageUrl)
@@ -68,20 +68,27 @@ final class PizzaListVC: UIViewController {
 //                            }).disposed(by: self.disposeBag)
 //
 //                                   }
-                    print("1111-4", model)
+                    print("1111-4", image)
                     
                 }.disposed(by: self.disposeBag)
+        
+        
+        self.presenter.menuCategory
+            .bind(to: self.rootView.menuCatergoryCollectionView.rx.items(MenuCatergoryCell.self)) { _, model, cell in
+                cell.set(category: model)
+            }.disposed(by: disposeBag)
     }
     
 }
 
 extension PizzaListVC: PizzaListView {
-    func getBannerImage(_ image: UIImage) {
-      //  bannerImages.accept(image)
+    func getProductImage(_ image: UIImage) {
+     //   productImage.accept(image)
       
     }
     
     func getMenuItems(_ menuItems: [MenuItem]) {
+        print("1111-2", menuItems)
         menuItemsData.accept(menuItems)
     }
     

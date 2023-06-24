@@ -9,5 +9,5 @@ import Foundation
 
 struct MenuItem: Decodable {
     let image: URL?
-    let name, description, price, category : String
+    let name, description, price : String
 }

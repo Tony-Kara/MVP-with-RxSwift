@@ -10,8 +10,8 @@ import RxSwift
 import RxCocoa
 
 public extension UIColor {
-  static let SwensonHe_BackgroundColor = UIColor(hex: "#002762")
-  static let SwensonHe_TextColor = UIColor(hex: "#444E72")
+  static let hammer_menuCat_borderColor = UIColor(hex: "#FD3A69")
+  static let hammer_TextColor_menuCategory = UIColor(hex: "#FD3A69")
   
 }
 
@@ -110,6 +110,15 @@ extension UIImage {
       return nil
     }
   }
+}
+
+extension CALayer {
+    func addDropShadowBottom(_ opacity: Float, radius: CGFloat) {
+      shadowColor = UIColor.black.cgColor
+      shadowOffset = CGSize(width: 0, height: 1)
+      shadowRadius = radius
+      shadowOpacity = opacity
+    }
 }
 
 // MARK: - Hex colors

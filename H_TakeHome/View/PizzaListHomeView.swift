@@ -30,7 +30,7 @@ final class PizzaListHomeView: UIView {
     }()
     
     lazy var menuCatergoryCollectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
+        let layout = MenuCatCellFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
@@ -81,8 +81,8 @@ final class PizzaListHomeView: UIView {
         menuCatergoryCollectionView.snp.makeConstraints { make in
             make.top.equalTo(bannerViewCollectionView.snp.bottom).offset(24)
             make.leading.trailing.equalToSuperview().inset(16)
-            make.height.equalTo(12)
-            
+            make.height.equalTo(88)
+            make.width.equalTo(132)
         }
     }
 
