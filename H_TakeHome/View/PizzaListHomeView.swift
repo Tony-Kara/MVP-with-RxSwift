@@ -40,7 +40,9 @@ final class PizzaListHomeView: UIView {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
+        tableView.estimatedRowHeight = 156
         tableView.rowHeight = UITableView.automaticDimension
+      //  tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 16, right: 0)
         tableView.contentInsetAdjustmentBehavior = .automatic
         return tableView
         }()
@@ -61,7 +63,7 @@ final class PizzaListHomeView: UIView {
 
     func setupInitialLayout() {
         addSubview(backgroundView)
-        [bannerViewCollectionView, menuCatergoryCollectionView].forEach { backgroundView.addSubview($0) }
+        [bannerViewCollectionView, menuCatergoryCollectionView, tableView].forEach { backgroundView.addSubview($0) }
 
         backgroundView.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
@@ -80,6 +82,13 @@ final class PizzaListHomeView: UIView {
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(32)
             make.width.equalTo(88)
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(menuCatergoryCollectionView.snp.bottom).offset(24)
+            make.bottom.equalToSuperview().offset(-15)
+            make.width.centerX.equalToSuperview()
+            
         }
     }
 

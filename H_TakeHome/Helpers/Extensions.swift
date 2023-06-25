@@ -12,6 +12,9 @@ import RxCocoa
 public extension UIColor {
   static let hammer_menuCat_borderColor = UIColor(hex: "#FD3A69")
   static let hammer_TextColor_menuCategory = UIColor(hex: "#FD3A69")
+  static let hammer_TextColor_pizzaName = UIColor(hex: "#222831")
+  static let hammer_TextColor_pizzaDescription = UIColor(hex: "#222831")
+  static let hammer_TextColor_pizzaPrice = UIColor(hex: "#FD3A69")
   
 }
 
@@ -117,6 +120,13 @@ extension CALayer {
       shadowColor = UIColor.black.cgColor
       shadowOffset = CGSize(width: 0, height: 1)
       shadowRadius = radius
+      shadowOpacity = opacity
+    }
+    
+    func addDropRoundedShadow(_ opacity: Float) {
+      shadowColor = UIColor.black.cgColor
+      shadowOffset = .zero
+      shadowRadius = 2
       shadowOpacity = opacity
     }
 }

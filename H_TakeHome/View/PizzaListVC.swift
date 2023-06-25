@@ -22,6 +22,7 @@ final class PizzaListVC: UIViewController {
    private let rootView = PizzaListHomeView()
    
    private var menuItemsData = BehaviorRelay<[MenuItem]>(value:[])
+   private var productImage = BehaviorRelay<UIImage?>(value: nil)
   
    private let disposeBag = DisposeBag()
     
@@ -39,9 +40,9 @@ final class PizzaListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
-        
         rootView.bannerViewCollectionView.registerClassForCell(AdvertisementBannerCollectionCell.self)
         rootView.menuCatergoryCollectionView.registerClassForCell(MenuCatergoryCell.self)
+        rootView.tableView.registerClassForCell(PizzaInfoTableViewCell.self)
         bindPresenter()
         
        
@@ -68,7 +69,7 @@ final class PizzaListVC: UIViewController {
 //                            }).disposed(by: self.disposeBag)
 //
 //                                   }
-                    print("1111-4", image)
+                    
                     
                 }.disposed(by: self.disposeBag)
         
@@ -77,13 +78,34 @@ final class PizzaListVC: UIViewController {
             .bind(to: self.rootView.menuCatergoryCollectionView.rx.items(MenuCatergoryCell.self)) { _, categoryMenu, cell in
                 cell.set(category: categoryMenu)
             }.disposed(by: disposeBag)
+        
+        self.menuItemsData
+            .bind(to: self.rootView.tableView.rx.items(PizzaInfoTableViewCell.self)) { _, model, cell in
+                
+              //  cell.configure(model: model)
+                
+                if let imageUrl = model.image {
+                    self.presenter.loadBannerImage(with: imageUrl)
+                    self.productImage
+                        .subscribe(onNext: { image in
+                            if let image = image {
+                                cell.configure(model: model, image: image)
+                            }
+
+                        }).disposed(by: self.disposeBag)
+
+                }
+
+                
+                
+            }.disposed(by: disposeBag)
     }
     
 }
 
 extension PizzaListVC: PizzaListView {
     func getProductImage(_ image: UIImage) {
-     //   productImage.accept(image)
+        productImage.accept(image)
       
     }
     

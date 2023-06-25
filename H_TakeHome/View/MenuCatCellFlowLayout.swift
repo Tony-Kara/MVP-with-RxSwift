@@ -23,7 +23,7 @@ final class MenuCatCellFlowLayout: UICollectionViewFlowLayout {
                              right: 16)
         
         let screenSize = UIScreen.main.bounds.width 
-        let widthSize = screenSize / 3.4
+        let widthSize = screenSize / 3.9
         
         let screenWidth = UIScreen.main.bounds.width
         

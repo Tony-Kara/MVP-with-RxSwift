@@ -31,6 +31,7 @@
 		7FAD0FAA2A46D0C9000E35E7 /* MenuCatergoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD0FA92A46D0C9000E35E7 /* MenuCatergoryCell.swift */; };
 		7FAD0FAE2A46DA0C000E35E7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD0FAD2A46DA0C000E35E7 /* Extensions.swift */; };
 		7FAD0FB02A473175000E35E7 /* MenuCatCellFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD0FAF2A473174000E35E7 /* MenuCatCellFlowLayout.swift */; };
+		7FAD0FB22A476065000E35E7 /* PizzaInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD0FB12A476065000E35E7 /* PizzaInfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		7FAD0FA92A46D0C9000E35E7 /* MenuCatergoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCatergoryCell.swift; sourceTree = "<group>"; };
 		7FAD0FAD2A46DA0C000E35E7 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7FAD0FAF2A473174000E35E7 /* MenuCatCellFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCatCellFlowLayout.swift; sourceTree = "<group>"; };
+		7FAD0FB12A476065000E35E7 /* PizzaInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaInfoTableViewCell.swift; sourceTree = "<group>"; };
 		9EBD966C8D2E95AA6A5838BF /* Pods-H_TakeHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-H_TakeHome.release.xcconfig"; path = "Target Support Files/Pods-H_TakeHome/Pods-H_TakeHome.release.xcconfig"; sourceTree = "<group>"; };
 		B9CD681471F282E862018D25 /* Pods-H_TakeHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-H_TakeHome.debug.xcconfig"; path = "Target Support Files/Pods-H_TakeHome/Pods-H_TakeHome.debug.xcconfig"; sourceTree = "<group>"; };
 		C67112B3DC7D0FF003B51E19 /* Pods_H_TakeHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_H_TakeHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				7FAD0FA52A46C268000E35E7 /* AdvertisementBannerCollectionLayout.swift */,
+				7FAD0FB12A476065000E35E7 /* PizzaInfoTableViewCell.swift */,
 				7FAD0FA12A46BEEB000E35E7 /* BannerCellFlowLayout.swift */,
 				7FAD0FAF2A473174000E35E7 /* MenuCatCellFlowLayout.swift */,
 				7FAD0FA92A46D0C9000E35E7 /* MenuCatergoryCell.swift */,
@@ -324,6 +327,7 @@
 				7FAD0F8E2A46A397000E35E7 /* ShoppingCartPresenter.swift in Sources */,
 				7FAD0F982A46A539000E35E7 /* ShoppingCartVC.swift in Sources */,
 				7FAD0FA82A46CBE8000E35E7 /* AdvertisementBannerCollectionCell.swift in Sources */,
+				7FAD0FB22A476065000E35E7 /* PizzaInfoTableViewCell.swift in Sources */,
 				7FAD0FA62A46C268000E35E7 /* AdvertisementBannerCollectionLayout.swift in Sources */,
 				7FAD0F9D2A46B3DC000E35E7 /* Model.swift in Sources */,
 				7FAD0F9B2A46B20E000E35E7 /* ApiService.swift in Sources */,
