@@ -14,6 +14,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         delegate = self
         tabBar.layer.borderWidth = 1
         tabBar.layer.borderColor = .init(gray: 0.5, alpha: 0.5)
+        tabBar.backgroundColor = .white
         setUpTabBarItems()
     }
     
