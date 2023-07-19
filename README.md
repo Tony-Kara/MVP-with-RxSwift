@@ -1,2 +1,2 @@
 # MVP-with-RxSwift
-Sample project that uses MVP architecture with MVP with a backend API.
+Sample project that uses MVP architecture with a backend API.
